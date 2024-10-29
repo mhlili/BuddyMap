@@ -1,13 +1,12 @@
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
 
-export default function Index() {
+export default function MapScreen() {
   return (
     <View style={styles.container}>
-      <Text style = {styles.text}>Home screen</Text>
-      <Link href={{ pathname: './map' }}style={styles.button}>
-        Go to Map screen
-      </Link>
+      <Text style={styles.text}>Map screen</Text>
+      <Link href={{pathname: "./friends"}}style= {styles.button}>See friends</Link>
+      <Link href={{pathname: "./profile"}}style= {styles.button}>Edit profile</Link>
     </View>
   );
 }
@@ -16,8 +15,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#25292e',
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyContent: 'center'
   },
   text: {
     color: '#fff',
@@ -27,4 +26,4 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     color: '#fff',
   },
-})
+});
