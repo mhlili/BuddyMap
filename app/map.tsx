@@ -1,5 +1,7 @@
 import { Text, View, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
+import db from '@/firebaseConfig';
+
 
 export default function MapScreen() {
   return (
@@ -10,6 +12,9 @@ export default function MapScreen() {
     </View>
   );
 }
+
+//console.log(db);
+console.log("hi");
 
 const styles = StyleSheet.create({
   container: {
