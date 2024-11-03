@@ -1,13 +1,27 @@
-import { Text, View, StyleSheet } from "react-native";
-import { Link } from 'expo-router';
+import { Text, View, StyleSheet, Button, Alert, Pressable, GestureResponderEvent } from "react-native";
+import { Link, useRouter } from 'expo-router';
+import { useState } from "react";
+import { TextInput } from "react-native-gesture-handler";
+import Username from "@/components/username";
+import Password from "@/components/Password";
+import CustomButton from "@/components/CustomSmallButton";
 
 export default function Index() {
+  const[text, setText] = useState("")
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
-      <Text style = {styles.text}>Home screen</Text>
+      <Text style = {styles.text}>Login Screen</Text>
       <Link href={{ pathname: './map' }}style={styles.button}>
-        Go to Map screen
+        Forgot Password?
       </Link>
+      <Link href={{ pathname: './map' }}style={styles.button}>
+        Not a member? Sign up now
+      </Link>
+      <Username/>
+      <Password/>
+      <CustomButton title="Log In" onPress={()=>router.push('./map')}></CustomButton>
     </View>
   );
 }
