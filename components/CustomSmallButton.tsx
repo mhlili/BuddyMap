@@ -10,8 +10,8 @@ export default function CustomButton({ title, onPress }: { title: string; onPres
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#9DD5FD', // Customize background color
-    width: 75,
+    backgroundColor: '#00487C', // Customize background color
+    width: 250,
     height: 35,
     borderRadius: 8,
     margin:5
