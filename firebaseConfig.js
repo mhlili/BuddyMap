@@ -17,11 +17,12 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore();
+export default db; 
 
 export async function addData() {
   try {
-    const docRef = await addDoc(collection(db, "test1"), {
+    const docRef = await addDoc(collection(db, "users"), {
       name: "Tokyo",
       country: "Japan"
     });

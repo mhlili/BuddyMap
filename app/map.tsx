@@ -1,18 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import { Link } from 'expo-router';
-import { addData } from '@/firebaseConfig';
 
-export default function MapScreen() {
-  const [hasAdded, setHasAdded] = useState(false);
-
-  useEffect(() => {
-    if (!hasAdded) {
-      addData();
-      setHasAdded(true); // Set the flag to prevent re-running
-    }
-  }, [hasAdded]);
-  
+export default function MapScreen() {  
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Map screen</Text>
