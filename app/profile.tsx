@@ -38,7 +38,7 @@ export default function ProfileScreen() {
       <Text style={styles.text}>City, State</Text>
       <View style={styles.buttonContainer}>
         <CustomButton title='Friends' onPress={()=>router.push('/friends')}></CustomButton>
-        {/* <CustomButton title='Settings' onPress={()=>router.push('/settings')}></CustomButton> */}
+        <CustomButton title='Settings' onPress={()=>router.push('/settings')}></CustomButton>
       </View>
       <TextField label="Username" value={username} onChangeText={(text) => setUsername(text)} placeholder='Username'></TextField>
       <TextField label="Email" value={email} onChangeText={(text) => setEmail(text)} placeholder='Email'></TextField>
