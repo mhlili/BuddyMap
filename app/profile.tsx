@@ -1,6 +1,5 @@
 import { Text, View, StyleSheet, Image, Button } from 'react-native';
 import TextField from '@/components/TextInput';
-import CustomButton from '@/components/CustomSmallButton'
 import { useState } from 'react';
 import { useRouter } from 'expo-router'
 import { collection, addDoc } from 'firebase/firestore';
