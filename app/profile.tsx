@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'expo-router'
 import { collection, addDoc } from 'firebase/firestore';
 import db  from '@/firebaseConfig'; 
+import CustomButton from '@/components/CustomSmallButton';
 
 export default function ProfileScreen() {
   const [username, setUsername] = useState<string>('');
