@@ -2,12 +2,31 @@ import { Text, View, StyleSheet, Image, Button } from 'react-native';
 import TextField from '@/components/TextInput';
 import { useState } from 'react';
 import { useRouter } from 'expo-router'
+import { collection, addDoc } from 'firebase/firestore';
+import db  from '@/firebaseConfig'; 
 
 export default function ProfileScreen() {
   const [username, setUsername] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const router = useRouter();
+
+  const handleSubmit = async () => {
+    try {
+      await addDoc(collection(db, 'users'), {
+        username: username,
+        email: email,
+        password: password
+      });
+      // Clear input fields or navigate to another screen
+      setUsername('');
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      console.error('Error adding document: ', error);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -23,6 +42,7 @@ export default function ProfileScreen() {
       <TextField label="Username" value={username} onChangeText={(text) => setUsername(text)} placeholder='Username'></TextField>
       <TextField label="Email" value={email} onChangeText={(text) => setEmail(text)} placeholder='Email'></TextField>
       <TextField label="Password" value={password} onChangeText={(text) => setPassword(text)} placeholder='Password' secureTextEntry={true}></TextField>
+      <CustomButton title='Submit' onPress={handleSubmit}></CustomButton>
     </View>
   );
 }
