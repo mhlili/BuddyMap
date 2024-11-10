@@ -12,7 +12,7 @@ export default function Index() {
         <Image source={require('@/assets/images/BuddyMappingV2.jpg')} style={styles.logo}/>
         <Username/>
         <Password/>
-        <Link href={{ pathname: './map' }}style={styles.smallTextRightAlign}>
+        <Link href={{ pathname: './forgotpassword' }}style={styles.smallTextRightAlign}>
           Forgot Password?
         </Link>
       <CustomButton title="Log In" onPress={()=>router.push('./map')}></CustomButton>
