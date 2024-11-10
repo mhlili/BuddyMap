@@ -5,6 +5,7 @@ import { useRouter } from 'expo-router'
 import { collection, addDoc } from 'firebase/firestore';
 import db  from '@/firebaseConfig'; 
 import CustomButton from '@/components/CustomSmallButton';
+import NavBar from '@/components/NavBar';
 
 export default function ProfileScreen() {
   const [username, setUsername] = useState<string>('');
@@ -30,6 +31,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.container}>
+      <NavBar/>
       <Image
         source={{ uri: 'https://picsum.photos/200' }}
         style={styles.image}
