@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword,signOut } from 'firebase/auth';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import db  from '@/firebaseConfig';
+import { auth } from './firebaseConfig';
 
 
 // Function to register a new user
@@ -13,6 +14,8 @@ const registerUser = async (email, password) => {
     console.error('Error registering user:', error.message);
   }
 };
+
+export default registerUser;
 
 // Function to sign in a user
 const loginUser = async (email, password) => {

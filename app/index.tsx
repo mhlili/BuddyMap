@@ -16,7 +16,7 @@ export default function Index() {
           Forgot Password?
         </Link>
       <CustomButton title="Log In" onPress={()=>router.push('./map')}></CustomButton>
-      <Link href={{ pathname: './signup' }}style={styles.smallText}>
+      <Link href={{ pathname: './signup2' }}style={styles.smallText}>
         Not a member? Sign up now
       </Link>
     </View>

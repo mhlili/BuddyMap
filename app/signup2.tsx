@@ -1,0 +1,59 @@
+import { Text, View, StyleSheet, Image } from 'react-native';
+import { useState } from 'react';
+import { useRouter } from 'expo-router'
+import { collection, addDoc } from 'firebase/firestore';
+import db  from '@/firebaseConfig'; 
+import CustomButton from '@/components/CustomSmallButton';
+import Musername from '@/components/Musername';
+import Memail from '@/components/Memail';
+import Mpassword from '@/components/Mpassword';
+import registerUser  from '@/firebaseAuth';
+
+
+export default function SignUpScreen() {
+    const [username, setUsername] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const router = useRouter();
+
+    return (
+        <View style={styles.container}>
+            <Image source={require('@/assets/images/BuddyMappingV2.jpg')} style={styles.logo}/>
+            <Musername value={username} onChangeText={setUsername}></Musername>
+            <Memail value={email} onChangeText={setEmail}></Memail>
+            <Mpassword value={password} onChangeText={setPassword}></Mpassword>
+            <CustomButton title='Sign Up' onPress={registerUser}></CustomButton>
+        </View>
+      );
+}
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#FFFFFF',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'left',
+    },
+    logo: {
+      width: 217,
+      height: 205,
+      marginBottom: 20,
+    },
+    text: {
+      color: '#000000',
+    },
+    button: {
+      fontSize: 20,
+      textDecorationLine: 'underline',
+      color: '#000000',
+    },
+    smallText: {
+      color: '#000000',
+      fontSize: 10,
+    },
+    smallTextRightAlign: {
+      color: '#000000',
+      fontSize: 10,
+    }
+  })

@@ -21,15 +21,3 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 export const auth = getAuth(app);
 export default db; 
-
-export async function addData() {
-  try {
-    const docRef = await addDoc(collection(db, "users"), {
-      name: "Tokyo",
-      country: "Japan"
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-}
