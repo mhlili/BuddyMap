@@ -1,3 +1,4 @@
+import { Link } from 'expo-router';
 import { Text, View, StyleSheet } from 'react-native';
 
 const Rectangle = () => {
@@ -11,6 +12,9 @@ export default function FriendsScreen() {
     <View style={styles.container}>
       <Text style={styles.text}>Friends screen</Text>
       <Rectangle/>
+      <Link href={{ pathname: './friendrequests' }}style={styles.smallText}>
+          Friend Requests
+      </Link>
     </View>
   );
 }
@@ -18,7 +22,7 @@ export default function FriendsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -31,6 +35,11 @@ const styles = StyleSheet.create({
     left: 0
   },
   text: {
-    color: '#fff',
+    color: '#00487C',
+    fontSize: 50
+  },
+  smallText: {
+    color: '#000000',
+    fontSize: 10,
   },
 });

@@ -10,6 +10,7 @@ export default function RootLayout() {
       <Stack.Screen name="signup" options={{title: 'Sign Up'}} />
       <Stack.Screen name="settings" options={{ title: 'Settings' }} />
       <Stack.Screen name="forgotpassword" options={{ title: 'Forgot Password' }} />
+      <Stack.Screen name="friendrequests" options={{ title: 'Friend Requests' }} />
     </Stack>
   );
 }
