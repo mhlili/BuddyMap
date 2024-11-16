@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
 import { Link } from 'expo-router';
+import NavBar from '@/components/NavBar';
 
 export default function MapScreen() {  
   return (
@@ -9,11 +10,10 @@ export default function MapScreen() {
       
       <Link href={{pathname: "./friends"}}style= {styles.button}>See friends</Link>
       <Link href={{pathname: "./profile"}}style= {styles.button}>Edit profile</Link>
+      <NavBar/>
     </View>
   );
 }
-
-//console.log(getNameTest);
 
 
 const styles = StyleSheet.create({

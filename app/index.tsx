@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Link, useRouter } from 'expo-router';
-import Username from "@/components/Username";
+import Username from "@/components/username";
 import Password from "@/components/Password";
 import CustomButton from "@/components/CustomSmallButton";
 
