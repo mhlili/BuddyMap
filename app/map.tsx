@@ -1,34 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
-import { Link } from 'expo-router';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
 import NavBar from '@/components/NavBar';
+import MapView from '@/components/Map/Map'; 
+
 
 export default function MapScreen() {  
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Map screen</Text>
-      
-      <Link href={{pathname: "./friends"}}style= {styles.button}>See friends</Link>
-      <Link href={{pathname: "./profile"}}style= {styles.button}>Edit profile</Link>
-      <NavBar/>
+      <MapView />
+      <NavBar />
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#25292e',
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
-  text: {
-    color: '#fff',
-  },
-  button: {
-    fontSize: 20,
-    textDecorationLine: 'underline',
-    color: '#fff',
+  map: {
+    width: '100%',
+    height: '100%',
   },
 });

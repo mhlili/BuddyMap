@@ -1,11 +1,11 @@
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
-export default function CustomButton({ title, onPress, width, height }: { title: string; onPress: () => void; width: number; height: number}) {
+export default function CustomButton({ title, onPress, width = 250, height = 35 }: { title: string; onPress: () => void; width?: number; height?: number}) {
   return (
     <TouchableOpacity style={{
       backgroundColor: '#00487C', // Customize background color
-      width: width || 250,
-      height: height || 35,
+      width: width,
+      height: height,
       borderRadius: 8,
       margin:5}}
       onPress={onPress}>
