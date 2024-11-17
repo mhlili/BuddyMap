@@ -15,6 +15,9 @@ export default function FriendsScreen() {
       <Link href={{ pathname: './friendrequests' }}style={styles.smallText}>
           Friend Requests
       </Link>
+      <Link href={{ pathname: './addfriends' }}style={styles.smallText}>
+          Add Friends
+      </Link>
     </View>
   );
 }
@@ -40,6 +43,6 @@ const styles = StyleSheet.create({
   },
   smallText: {
     color: '#000000',
-    fontSize: 10,
+    fontSize: 20,
   },
 });
