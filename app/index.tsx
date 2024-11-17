@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Link, useRouter } from 'expo-router';
-import Username from "@/components/username";
+import Username from "@/components/Username";
 import Password from "@/components/Password";
 import CustomButton from "@/components/CustomSmallButton";
 
@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 20
   },
   logo: {
     width: 217,
