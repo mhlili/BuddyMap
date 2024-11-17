@@ -1,10 +1,25 @@
+import NavBar from '@/components/NavBar';
 import { Link } from 'expo-router';
 import { Text, View, StyleSheet } from 'react-native';
+
+const Rectangle = () => {
+  return (
+    <View style={styles.rectangle} />
+  );
+};
 
 export default function FriendsScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Friends screen</Text>
+      <Rectangle/>
+      <Link href={{ pathname: './friendrequests' }}style={styles.smallText}>
+          Friend Requests
+      </Link>
+      <Link href={{ pathname: './addfriends' }}style={styles.smallText}>
+          Add Friends
+      </Link>
+      <NavBar />
     </View>
   );
 }
