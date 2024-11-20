@@ -1,5 +1,6 @@
-import { Link } from 'expo-router';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import FriendBar from '@/components/friends page/FriendBar';
+import { Link, useRouter } from 'expo-router';
+import { Text, View, StyleSheet, Image, Pressable, Dimensions,  } from 'react-native';
 
 const Rectangle = () => {
   return (
@@ -8,48 +9,82 @@ const Rectangle = () => {
 };
 
 export default function FriendsScreen() {
+  const router = useRouter();
+
   return (
-    <View style={styles.container}>
-      <Image source={require('@/assets/images/friend-requests-icon.png')} style={styles.friendrequests}/>
-      <Text style={styles.text}>Friends screen</Text>
+    <View style={styles.headerContainer}>
       <Rectangle/>
-      <Link href={{ pathname: './friendrequests' }}style={styles.smallText}>
-          Friend Requests
-      </Link>
-      <Link href={{ pathname: './addfriends' }}style={styles.smallText}>
-          Add Friends
-      </Link>
+      <Pressable onPress={()=>router.push('./friendrequests')}>
+        <Image 
+        source={require('@/assets/images/friend-requests-icon.png')} 
+        style={styles.friendrequests}/>
+      </Pressable>
+      <Pressable onPress={()=>router.push('./addfriends')}>
+        <Image 
+        source={require('@/assets/images/plus.png')} 
+        style={styles.plus}
+        />
+      </Pressable>
+      <Text style={styles.friendslabel}>Friends</Text>
+      <View style={styles.friendBarContainer}>
+        <FriendBar />
+        <FriendBar />
+        <FriendBar />
+      </View>
     </View>
   );
 }
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
-  container: {
+  headerContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: 'white',
   },
-  rectangle: {
-    width: '100%',
-    height: '18%',
-    backgroundColor: '#00487C',
+  friendslabel: {
     position: 'absolute',
-    top: 0,
-    left: 0
+    top: height * 0.11,
+    left: width * 0.05,
+    color: 'white',
+    fontSize: 25,
+    fontFamily: 'Helvetica'
   },
   friendrequests: {
-    top: 0,
-    left: 0,
-    width: 25,
-    height: 25
+    position: 'absolute',
+    top: height * 0.03,
+    left: width * 0.03,
+    width: width * 0.08,
+    height: width * 0.08,
+    zIndex: 2,
+  },
+  plus: {
+    position: 'absolute',
+    top: height * 0.03,
+    right: width * 0.03,
+    width: width * 0.08,
+    height: width * 0.08,
+    zIndex: 2,
+  },
+  rectangle: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: '#00487C',
+    zIndex: 0,
+    height: height * 0.15
   },
   text: {
     color: '#00487C',
-    fontSize: 50
+    fontSize: 50,
+    marginTop: '20%',
+    alignSelf: 'center'
   },
   smallText: {
     color: '#000000',
     fontSize: 20,
+    marginTop: 10,
+    alignSelf: 'center'
   },
+  friendBarContainer: {
+    marginTop: height * 0.15,
+  }
 });
