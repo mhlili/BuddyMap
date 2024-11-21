@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
   },
   friendslabel: {
     position: 'absolute',
-    top: height * 0.11,
-    left: width * 0.05,
+    top: "11%",
+    left: "5%",
     color: 'white',
     fontSize: 25,
     fontFamily: 'Helvetica'
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: '#00487C',
     zIndex: 0,
-    height: height * 0.15
+    height: "16%"
   },
   text: {
     color: '#00487C',
