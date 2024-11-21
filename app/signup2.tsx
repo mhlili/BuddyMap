@@ -15,12 +15,17 @@ export default function SignUpScreen() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const router = useRouter();
+    const [errormessage, setErrorMessage] = useState<string>('');
     const handleSignUp = async () => {
       try {
         await registerUser(email,password);
         router.push('./map');
       } catch (error) {
         console.error('Error signing up:', error);
+        if (error instanceof Error){
+          setErrorMessage(error.message);
+        }
+        
       }
   }
 
@@ -31,6 +36,7 @@ export default function SignUpScreen() {
             <Memail value={email} onChangeText={setEmail}></Memail>
             <Mpassword value={password} onChangeText={setPassword}></Mpassword>
             <CustomButton title='Sign Up' onPress={handleSignUp}></CustomButton>
+            <Text style={styles.error}>{errormessage}</Text>
         </View>
       );
 }
@@ -63,5 +69,8 @@ const styles = StyleSheet.create({
     smallTextRightAlign: {
       color: '#000000',
       fontSize: 10,
-    }
+    },
+    error: {
+      color:'red',
+    },
   })

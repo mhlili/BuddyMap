@@ -11,7 +11,7 @@ const registerUser = async (email, password) => {
     console.log('User registered:', user);
   } catch (error) {
     console.error('Error registering user:', error.message);
-    throw error.message;
+    throw error;
   }
 };
 
