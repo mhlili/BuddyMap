@@ -3,7 +3,6 @@ import { collection, addDoc, getDocs } from 'firebase/firestore';
 import db  from '@/firebaseConfig';
 import { auth } from './firebaseConfig';
 
-
 // Function to register a new user
 const registerUser = async (email, password) => {
   try {
@@ -12,10 +11,25 @@ const registerUser = async (email, password) => {
     console.log('User registered:', user);
   } catch (error) {
     console.error('Error registering user:', error.message);
+    throw error.message;
   }
 };
 
 export default registerUser;
+
+// function signUp(email, password) { 
+//   createUserWithEmailAndPassword(auth, email, password) 
+//     .then((userCredential) => { 
+//       // Successfully created new user
+//       const user = userCredential.user; console.log("User created:", user); }) 
+//     .catch((error) => { 
+//       const errorCode = error.code; 
+//       const errorMessage = error.message; 
+//       console.error("Error creating user:", errorCode, errorMessage); 
+//     }); 
+//   }
+// export default signUp;
+
 
 // Function to sign in a user
 const loginUser = async (email, password) => {
@@ -43,9 +57,9 @@ const logoutUser = async () => {
 const addData = async (username, email, password) => {
   try {
     const docRef = await addDoc(collection(db, 'users'), {
-      username: {username},
-      email: {email},
-      password:{password}
+      username: username,
+      email: email,
+      password:password
     });
     console.log('Document written with ID:', docRef.id);
   } catch (error) {

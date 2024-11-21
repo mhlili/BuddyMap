@@ -15,6 +15,14 @@ export default function SignUpScreen() {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const router = useRouter();
+    const handleSignUp = async () => {
+      try {
+        await registerUser(email,password);
+        router.push('./map');
+      } catch (error) {
+        console.error('Error signing up:', error);
+      }
+  }
 
     return (
         <View style={styles.container}>
@@ -22,7 +30,7 @@ export default function SignUpScreen() {
             <Musername value={username} onChangeText={setUsername}></Musername>
             <Memail value={email} onChangeText={setEmail}></Memail>
             <Mpassword value={password} onChangeText={setPassword}></Mpassword>
-            <CustomButton title='Sign Up' onPress={registerUser}></CustomButton>
+            <CustomButton title='Sign Up' onPress={handleSignUp}></CustomButton>
         </View>
       );
 }
