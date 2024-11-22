@@ -7,6 +7,7 @@ import CustomButton from '@/components/CustomSmallButton';
 import Musername from '@/components/Musername';
 import Memail from '@/components/Memail';
 import Mpassword from '@/components/Mpassword';
+import NavBar from '@/components/NavBar';
 
 export default function ProfileScreen() {
   const [username, setUsername] = useState<string>('');
@@ -32,6 +33,7 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.container}>
+      <NavBar/>
       <Image
         source={{ uri: 'https://picsum.photos/200' }}
         style={styles.image}
