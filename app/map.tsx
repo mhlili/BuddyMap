@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import {APIProvider, Map} from '@vis.gl/react-google-maps';
 
 const App = () => {
+  <APIProvider apiKey={'AIzaSyCucj_W_JnPNuhOGtDQQv_SAxd3IUWsz-c'} onLoad={() => console.log('Maps API has loaded.')}></APIProvider>
   return (
     <View style={styles.container}>
       <MapView
