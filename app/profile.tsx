@@ -41,13 +41,13 @@ export default function ProfileScreen() {
       <Text style={styles.text}>Full Name</Text>
       <Text style={styles.text}>City, State</Text>
       <View style={styles.buttonContainer}>
-        <CustomButton title='Friends' onPress={()=>router.push('/friends')}></CustomButton>
-        <CustomButton title='Settings' onPress={()=>router.push('/settings')}></CustomButton>
+        <CustomButton title='Friends' onPress={()=>router.push('/friends')} width={250} height={35}></CustomButton>
+        <CustomButton title='Settings' onPress={()=>router.push('/settings')} width={250} height={35}></CustomButton>
       </View>
       <Musername value={username} onChangeText={setUsername}></Musername>
       <Memail value={email} onChangeText={setEmail}></Memail>
       <Mpassword value={password} onChangeText={setPassword}></Mpassword>
-      <CustomButton title='Submit' onPress={handleSubmit}></CustomButton>
+      <CustomButton title='Submit' onPress={handleSubmit} width={250} height={35}></CustomButton>
     </View>
   );
 }

@@ -35,7 +35,7 @@ export default function SignUpScreen() {
             <Musername value={username} onChangeText={setUsername}></Musername>
             <Memail value={email} onChangeText={setEmail}></Memail>
             <Mpassword value={password} onChangeText={setPassword}></Mpassword>
-            <CustomButton title='Sign Up' onPress={handleSignUp}></CustomButton>
+            <CustomButton title='Sign Up' onPress={handleSignUp} width={250} height={35}></CustomButton>
             <Text style={styles.error}>{errormessage}</Text>
         </View>
       );

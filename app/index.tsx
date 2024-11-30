@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Link, useRouter } from 'expo-router';
-import Username from "@/components/username";
+import Username from "@/components/Username";
 import Password from "@/components/Password";
 import CustomButton from "@/components/CustomSmallButton";
 
@@ -15,7 +15,7 @@ export default function Index() {
         <Link href={{ pathname: './forgotpassword' }}style={styles.smallTextRightAlign}>
           Forgot Password?
         </Link>
-      <CustomButton title="Log In" onPress={()=>router.push('./map')}></CustomButton>
+      <CustomButton title="Log In" onPress={()=>router.push('./map')} width={250} height={35}></CustomButton>
       <Link href={{ pathname: './signup2' }}style={styles.smallText}>
         Not a member? Sign up now
       </Link>
