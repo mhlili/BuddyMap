@@ -1,12 +1,12 @@
 import { router } from "expo-router";
 import { Image, View, StyleSheet, Text, Pressable } from "react-native";
 
-export default function FriendBar() {
+export default function FriendBar({ name }: { name: string}) {
 
     return (
       <View style={styles.container}>
         <Image source={require('@/assets/images/imageicon.jpg')} style={styles.friendIcon}/>
-        <Text style = {styles.text}>Friend Haha</Text>
+        <Text style = {styles.text}>{name || "Current Friend"}</Text>
         <Pressable onPress={() => router.push('./map')}>
             <Image source={require('@/assets/images/mapicon.png')} style={styles.rightIcon}/>
         </Pressable>
