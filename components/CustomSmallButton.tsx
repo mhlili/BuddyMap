@@ -23,13 +23,14 @@ export default function CustomButton({ title, onPress, width, height }: { title:
 }
 
 const styles = StyleSheet.create({
-  // button: {
-  //   backgroundColor: '#00487C', // Customize background color
-  //   width: 250,
-  //   height: 35,
-  //   borderRadius: 8,
-  //   margin:5
-  // },
+  button: {
+    backgroundColor: '#00487C', // Customize background color
+    width: 250,
+    height: 35,
+    borderRadius: 8,
+    margin:5,
+    marginBottom:10,
+  },
   buttonText: {
     color: '#FFFFFF', // Text color
     fontSize: 10,

@@ -1,10 +1,12 @@
-import { Text, View, StyleSheet, Image, Button } from 'react-native';
-import TextField from '@/components/TextInput';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import { useState } from 'react';
 import { useRouter } from 'expo-router'
 import { collection, addDoc } from 'firebase/firestore';
 import db  from '@/firebaseConfig'; 
 import CustomButton from '@/components/CustomSmallButton';
+import Musername from '@/components/Musername';
+import Memail from '@/components/Memail';
+import Mpassword from '@/components/Mpassword';
 import NavBar from '@/components/NavBar';
 
 export default function ProfileScreen() {
@@ -39,16 +41,16 @@ export default function ProfileScreen() {
       <Text style={styles.text}>Full Name</Text>
       <Text style={styles.text}>City, State</Text>
       <View style={styles.buttonContainer}>
-        <CustomButton title='Friends' onPress={()=>router.push('/friends')} width={200}></CustomButton>
-        <CustomButton title='Settings' onPress={()=>router.push('/settings')} width={200}></CustomButton>
+        <CustomButton title='Friends' onPress={()=>router.push('/friends')} width={200} height={35}></CustomButton>
+        <CustomButton title='Settings' onPress={()=>router.push('/settings')} width={200}> height={35}</CustomButton>
       </View>
       <View style={styles.textFields}>
-        <TextField label="Username" value={username} onChangeText={(text) => setUsername(text)} placeholder='Username'></TextField>
-        <TextField label="Email" value={email} onChangeText={(text) => setEmail(text)} placeholder='Email'></TextField>
-        <TextField label="Password" value={password} onChangeText={(text) => setPassword(text)} placeholder='Password' secureTextEntry={true}></TextField>
+        <Musername value={username} onChangeText={setUsername}></Musername>
+        <Memail value={email} onChangeText={setEmail}></Memail>
+        <Mpassword value={password} onChangeText={setPassword}></Mpassword>
       </View>
       <View style={styles.submitButton}>
-        <CustomButton title='Submit' onPress={handleSubmit}></CustomButton>
+        <CustomButton title='Submit' onPress={handleSubmit} width={250} height={35}></CustomButton>
       </View>
     </View>
   );
