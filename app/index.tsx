@@ -9,6 +9,7 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
+
         <Image source={require('@/assets/images/BuddyMappingV2.jpg')} style={styles.logo}/>
         <Username/>
         <Password/>
