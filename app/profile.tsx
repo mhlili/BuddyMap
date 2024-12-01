@@ -42,7 +42,7 @@ export default function ProfileScreen() {
       <Text style={styles.text}>City, State</Text>
       <View style={styles.buttonContainer}>
         <CustomButton title='Friends' onPress={()=>router.push('/friends')} width={200} height={35}></CustomButton>
-        <CustomButton title='Settings' onPress={()=>router.push('/settings')} width={200}> height={35}</CustomButton>
+        <CustomButton title='Settings' onPress={()=>router.push('/settings')} width={200} height={35}></CustomButton>
       </View>
       <View style={styles.textFields}>
         <Musername value={username} onChangeText={setUsername}></Musername>
