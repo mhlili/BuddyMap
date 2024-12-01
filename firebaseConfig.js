@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getAuth } from "firebase/auth"
 
 
 // Your web app's Firebase configuration
@@ -18,16 +19,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore();
+export const auth = getAuth(app);
 export default db; 
-
-export async function addData() {
-  try {
-    const docRef = await addDoc(collection(db, "users"), {
-      name: "Tokyo",
-      country: "Japan"
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
-}

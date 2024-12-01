@@ -8,6 +8,8 @@ const Rectangle = () => {
   );
 };
 
+import NavBar from '@/components/NavBar';
+
 export default function FriendsScreen() {
   const router = useRouter();
 

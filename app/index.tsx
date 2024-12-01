@@ -9,14 +9,15 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Image source={require('@/assets/images/BuddyMappingV2.jpg')} style={styles.logo}/>
-      <Username/>
-      <Password/>
-      <Link href={{ pathname: './forgotpassword' }}style={styles.smallTextRightAlign}>
-        Forgot Password?
-      </Link>
-      <CustomButton title="Log In" onPress={()=>router.push('./map')}></CustomButton>
-      <Link href={{ pathname: './signup' }}style={styles.smallText}>
+
+        <Image source={require('@/assets/images/BuddyMappingV2.jpg')} style={styles.logo}/>
+        <Username/>
+        <Password/>
+        <Link href={{ pathname: './forgotpassword' }}style={styles.smallTextRightAlign}>
+          Forgot Password?
+        </Link>
+      <CustomButton title="Log In" onPress={()=>router.push('./map')} width={250} height={35}></CustomButton>
+      <Link href={{ pathname: './signup2' }}style={styles.smallText}>
         Not a member? Sign up now
       </Link>
     </View>
