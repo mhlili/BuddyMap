@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#FFFFFF',
       alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'left',
+      justifyContent: 'flex-start',
+      paddingTop: 20
     },
     logo: {
       width: 217,
