@@ -1,5 +1,5 @@
-import React from 'react';
-import { TextInput, StyleSheet, View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { TextInput, StyleSheet } from 'react-native';
 
 interface Props {
   label: string;
@@ -9,10 +9,9 @@ interface Props {
   secureTextEntry?: boolean;
 }
 
-const TextField: React.FC<Props> = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
+const TextSearch: React.FC<Props> = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
   return (
-    <View style={styles.container}>
-      {label && <Text style={styles.label}>{label}</Text>}
+    <>
       <TextInput
         style={styles.input}
         onChangeText={onChangeText}
@@ -20,26 +19,20 @@ const TextField: React.FC<Props> = ({ label, value, onChangeText, placeholder, s
         placeholder={placeholder}
         secureTextEntry={secureTextEntry}
       />
-    </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    marginBottom: 10,
-  },
-  label: {
-    marginLeft: 10,
-    marginBottom:-3,
-    color: '#111',
-  },
   input: {
     borderWidth: 1,
+    backgroundColor: 'white',
     borderColor: 'gray',
     borderRadius:8,
     padding: 10,
     margin: 10,
+    width: "90%",
   },
 });
 
-export default TextField;
+export default TextSearch;
