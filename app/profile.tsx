@@ -41,13 +41,17 @@ export default function ProfileScreen() {
       <Text style={styles.text}>Full Name</Text>
       <Text style={styles.text}>City, State</Text>
       <View style={styles.buttonContainer}>
-        <CustomButton title='Friends' onPress={()=>router.push('/friends')} width={250} height={35}></CustomButton>
-        <CustomButton title='Settings' onPress={()=>router.push('/settings')} width={250} height={35}></CustomButton>
+        <CustomButton title='Friends' onPress={()=>router.push('/friends')} width={200} height={35}></CustomButton>
+        <CustomButton title='Settings' onPress={()=>router.push('/settings')} width={200} height={35}></CustomButton>
       </View>
-      <Musername value={username} onChangeText={setUsername}></Musername>
-      <Memail value={email} onChangeText={setEmail}></Memail>
-      <Mpassword value={password} onChangeText={setPassword}></Mpassword>
-      <CustomButton title='Submit' onPress={handleSubmit} width={250} height={35}></CustomButton>
+      <View style={styles.textFields}>
+        <Musername value={username} onChangeText={setUsername}></Musername>
+        <Memail value={email} onChangeText={setEmail}></Memail>
+        <Mpassword value={password} onChangeText={setPassword}></Mpassword>
+      </View>
+      <View style={styles.submitButton}>
+        <CustomButton title='Submit' onPress={handleSubmit} width={250} height={35}></CustomButton>
+      </View>
     </View>
   );
 }
@@ -55,21 +59,30 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 0
   },
   text: {
-    color: '#fff',
+    textAlign: 'center',
+    color: 'black',
+    fontSize: 25,
+    fontFamily: 'Helvetica'
   },
   image: {
-    width: 100,
-    height: 100,
-    marginBottom: 20,
+    width: 250,
+    height: 250,
+    paddingBottom: 20,
+    borderRadius: 200
+  },
+  textFields: {
+    width: '100%'
   },
   buttonContainer: {
     flexDirection: 'row',
-    marginHorizontal: 20,
-    marginTop:5
+  },
+  submitButton: {
+    alignItems: 'stretch'
   }
 });
