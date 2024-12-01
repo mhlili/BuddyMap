@@ -1,18 +1,33 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, TextInput } from 'react-native';
 import NavBar from '@/components/NavBar';
-import SearchBar from '@/components/SearchBar';
-// import { SearchBar } from '@rneui/themed';
-
-// import MapView from '@/components/Map/Map'; 
+// import SearchBar from '@/components/SearchBar';
+import MapView from 'react-native-maps';
 
 
 export default function MapScreen() {  
   return (
     <View style={styles.container}>
-      {/* <MapView /> */}
-      <SearchBar />
-      <Image source={require('@/assets/images/Map.png')} style={styles.logo}/>
+      <MapView style={styles.map} />
+        {/* showing the search bar */}
+        <View style={{ position: 'absolute', top: 10, width: '100%' }}>
+          <TextInput
+            style={{
+              borderRadius: 10,
+              margin: 10,
+              color: '#000',
+              borderColor: '#666',
+              backgroundColor: '#FFF',
+              borderWidth: 1,
+              height: 45,
+              paddingHorizontal: 10,
+              fontSize: 18,
+            }}
+            placeholder={'Search'}
+            placeholderTextColor={'#666'}
+          />
+        </View>
+      {/* <SearchBar /> */}
       <NavBar />
     </View>
   );
