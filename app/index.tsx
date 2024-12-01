@@ -10,13 +10,14 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
+
         <Image source={require('@/assets/images/BuddyMappingV2.jpg')} style={styles.logo}/>
         <Username/>
         <Password/>
         <Link href={{ pathname: './forgotpassword' }}style={styles.smallTextRightAlign}>
           Forgot Password?
         </Link>
-      <CustomButton title="Log In" onPress={() => router.push('./map')}></CustomButton>
+      <CustomButton title="Log In" onPress={()=>router.push('./map')}></CustomButton>
       <Link href={{ pathname: './signup' }}style={styles.smallText}>
         Not a member? Sign up now
       </Link>
@@ -29,7 +30,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingTop: 20
   },
   logo: {
     width: 217,

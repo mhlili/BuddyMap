@@ -1,6 +1,6 @@
 import { useRouter } from "expo-router";
 import { View, StyleSheet, Image } from "react-native";
-import CustomButton from "../components/CustomSmallButton";
+import CustomButton from "@/components/CustomSmallButton";
 import Username from "@/components/Username";
 import Email from "@/components/Email";
 
@@ -12,7 +12,7 @@ export default function ForgotPasswordScreen() {
             <Image source={require('@/assets/images/BuddyMappingV2.jpg')} style={styles.logo}/>
             <Username/>
             <Email/>
-            <CustomButton title="Reset Password" onPress={()=>router.push('./')}></CustomButton>
+            <CustomButton title="Reset Password" onPress={()=>router.push('./')} width={250} height={35}></CustomButton>
         </View>
       );
 }
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: '#FFFFFF',
       alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'left',
+      justifyContent: 'flex-start',
+      paddingTop: 20
     },
     logo: {
       width: 217,

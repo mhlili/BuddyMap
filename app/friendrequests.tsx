@@ -1,5 +1,4 @@
 import FriendRequest from '@/components/friend requests page/FriendRequest';
-import { Link } from 'expo-router';
 import { Image, Text, View, StyleSheet } from 'react-native';
 
 const Rectangle = () => {
@@ -26,6 +25,7 @@ export default function FriendRequests() {
     <FriendRequest/>
     <FriendRequest/>
     <FriendRequest/>
+    <Text style={styles.friendslabel}>Friend Requests</Text>
   </View>
   );
 }
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
   rectangle: {
     width: '100%',
-    height: '18%',
+    height: '16%',
     backgroundColor: '#00487C',
     position: 'absolute',
     top: 0,
@@ -54,6 +54,14 @@ const styles = StyleSheet.create({
   smallText: {
     color: '#000000',
     fontSize: 10,
+  },
+  friendslabel: {
+    position: 'absolute',
+    top: "11%",
+    left: "5%",
+    color: 'white',
+    fontSize: 25,
+    fontFamily: 'Helvetica'
   },
   request: {
 
