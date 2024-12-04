@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword,signOut } from 'firebase/auth';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, setDoc, doc } from 'firebase/firestore';
 import db  from '@/firebaseConfig';
 import { auth } from './firebaseConfig';
 
@@ -8,6 +8,13 @@ const registerUser = async (email, password) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
+
+    // Add user data to Firestore
+    const userDocRef = doc(db, 'users', user.uid);
+    await setDoc(userDocRef, {
+      email: user.email
+    })
+
     console.log('User registered:', user);
   } catch (error) {
     console.error('Error registering user:', error.message);
