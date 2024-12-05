@@ -1,12 +1,12 @@
 import { Image, View, StyleSheet, Text } from "react-native";
 
-export default function FriendRequest() {
+export default function FriendRequest({ name }: { name: string}) {
 
     return (
       <View style={styles.container}>
         <Image source={require('@/assets/images/imageicon.jpg')} style={styles.friendIcon}/>
         <Image source={require('@/assets/images/check-square.png')} style={styles.checkSquare}/>
-        <Text style = {styles.text}>New Friend</Text>
+        <Text style = {styles.text}>{name || "Friend Request"}</Text>
       </View>
     );
   }
