@@ -1,22 +1,41 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 import { Link, useRouter } from 'expo-router';
-import Username from "@/components/Username";
-import Password from "@/components/Password";
+import Memail from "@/components/Memail";
+import Mpassword from "@/components/Mpassword";
 import CustomButton from "@/components/CustomSmallButton";
+import { useState } from "react";
+import { loginUser } from "@/firebaseAuth";
 
 export default function Index() {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [errormessage, setErrorMessage] = useState<string>('');
   const router = useRouter();
+  const handleLogIn = async () => {
+    try {
+      await loginUser(email,password);
+      router.push('./map');
+      setErrorMessage("");
+    } catch (error) {
+      console.error('Error logging in:', error);
+      if (error instanceof Error){
+        setErrorMessage(error.message);
+      }
+      
+    }
+}
 
   return (
     <View style={styles.container}>
 
         <Image source={require('@/assets/images/BuddyMappingV2.jpg')} style={styles.logo}/>
-        <Username/>
-        <Password/>
+        <Memail value={email} onChangeText={setEmail}></Memail>
+        <Mpassword value={password} onChangeText={setPassword}></Mpassword>
         <Link href={{ pathname: './forgotpassword' }}style={styles.smallTextRightAlign}>
           Forgot Password?
         </Link>
-      <CustomButton title="Log In" onPress={()=>router.push('./map')} width={250} height={35}></CustomButton>
+      <CustomButton title="Log In" onPress={handleLogIn} width={250} height={35}></CustomButton>
+      <Text style={styles.error}>{errormessage}</Text>
       <Link href={{ pathname: './signup' }}style={styles.smallText}>
         Not a member? Sign up now
       </Link>
@@ -53,5 +72,8 @@ const styles = StyleSheet.create({
     color: '#000000',
     fontSize: 10,
     
+  },
+  error: {
+    color:'red',
   },
 })
