@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import { View, StyleSheet, Image } from "react-native";
 import CustomButton from "@/components/CustomSmallButton";
-import Username from "@/components/Username";
+import Username from "@/components/Username"; 
 import Email from "@/components/Email";
 
 export default function ForgotPasswordScreen() {
