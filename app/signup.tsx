@@ -5,7 +5,7 @@ import CustomButton from '@/components/CustomSmallButton';
 import Musername from '@/components/Musername';
 import Memail from '@/components/Memail';
 import Mpassword from '@/components/Mpassword';
-import registerUser  from '@/firebaseAuth';
+import {registerUser}  from '@/firebaseAuth';
 
 
 export default function SignUpScreen() {
@@ -18,6 +18,7 @@ export default function SignUpScreen() {
       try {
         await registerUser(email,password);
         router.push('./map');
+        setErrorMessage("");
       } catch (error) {
         console.error('Error signing up:', error);
         if (error instanceof Error){
