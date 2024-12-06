@@ -1,9 +1,12 @@
-import { useRouter } from "expo-router";
-import { View, StyleSheet, Image } from "react-native";
-import CustomButton from "../components/CustomSmallButton";
-import Username from "@/components/username";
-import Password from "@/components/Password";
-import Email from "@/components/Email";
+import { Text, View, StyleSheet, Image } from 'react-native';
+import { useState } from 'react';
+import { useRouter } from 'expo-router'
+import CustomButton from '@/components/CustomSmallButton';
+import Musername from '@/components/Musername';
+import Memail from '@/components/Memail';
+import Mpassword from '@/components/Mpassword';
+import registerUser  from '@/firebaseAuth';
+
 
 export default function SignUpScreen() {
     const [username, setUsername] = useState<string>('');

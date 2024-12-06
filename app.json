@@ -14,13 +14,17 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.BuddyMap"
+      "bundleIdentifier": "com.anonymous.BuddyMap",
+      "config": {
+        "googleMapsApiKey": "AIzaSyCz69kpPzRm24Qvp265udOfZJofxejk6Rw"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.BuddyMap"
     },
     "web": {
       "bundler": "metro",
@@ -32,6 +36,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "466abfcc-6f2e-4c70-9dc8-3907ef3eeb88"
+      }
     }
   }
 }

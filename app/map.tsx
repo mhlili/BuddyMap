@@ -2,13 +2,16 @@ import React from 'react';
 import { View, StyleSheet, Image, TextInput } from 'react-native';
 import NavBar from '@/components/NavBar';
 // import SearchBar from '@/components/SearchBar';
-import MapView from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 
 export default function MapScreen() {  
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} />
+      <MapView
+       style={styles.map}
+       provider={PROVIDER_GOOGLE}
+      />
         {/* showing the search bar */}
         <View style={{ position: 'absolute', top: 10, width: '100%' }}>
           <TextInput

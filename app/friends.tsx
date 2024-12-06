@@ -1,6 +1,6 @@
-import { Link } from 'expo-router';
-import { Text, View, StyleSheet } from 'react-native';
-import NavBar from '@/components/NavBar';
+import FriendBar from '@/components/friends page/FriendBar';
+import { Link, useRouter } from 'expo-router';
+import { Text, View, StyleSheet, Image, Pressable, Dimensions,  } from 'react-native';
 
 const Rectangle = () => {
   return (
@@ -14,19 +14,25 @@ export default function FriendsScreen() {
   const router = useRouter();
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Friends screen</Text>
-<<<<<<<<< Temporary merge branch 1
-      <NavBar/>
-=========
+    <View style={styles.headerContainer}>
       <Rectangle/>
-      <Link href={{ pathname: './friendrequests' }}style={styles.smallText}>
-          Friend Requests
-      </Link>
-      <Link href={{ pathname: './addfriends' }}style={styles.smallText}>
-          Add Friends
-      </Link>
->>>>>>>>> Temporary merge branch 2
+      <Pressable onPress={()=>router.push('./friendrequests')}>
+        <Image 
+        source={require('@/assets/images/friend-requests-icon.png')} 
+        style={styles.friendrequests}/>
+      </Pressable>
+      <Pressable onPress={()=>router.push('./addfriends')}>
+        <Image 
+        source={require('@/assets/images/plus.png')} 
+        style={styles.plus}
+        />
+      </Pressable>
+      <Text style={styles.friendslabel}>Friends</Text>
+      <View style={styles.friendBarContainer}>
+        <FriendBar />
+        <FriendBar />
+        <FriendBar />
+      </View>
     </View>
   );
 }
